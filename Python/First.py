@@ -15,7 +15,13 @@ print( 'This executes before the function.' )
 function_sample()
 
 # Text files
+from os import curdir
 f = open( 'test_file.txt' )
 content = f.read()
 print( content )
 f.close
+
+# OR (which closes the file automatically)
+with open( 'test_file.txt' ) as f:
+    content = f.read()
+    print( content )
